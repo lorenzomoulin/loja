@@ -1,0 +1,19 @@
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let item of items">
+        <div class="card mb-4">
+          <img [src]="item.image" class="card-img-top" alt="{{item.name}}">
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">{{item.price}}</p>
+            <button class="btn btn-primary" (click)="addToCart(item)">Adicionar à sacola</button>
+            <button *ngIf="item.quantity > 0" class="btn btn-danger" (click)="removeFromCart(item)">Remover</button>
+            <p *ngIf="item.quantity > 0" class="mt-2">Quantidade no carrinho: {{item.quantity}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    
+  </div>
+  
